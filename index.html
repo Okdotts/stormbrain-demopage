@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Storm-style Demo — Home</title>
+
+    <!-- Link to stylesheet -->
+    <link rel="stylesheet" href="styles1.css" />
+  </head>
+  <body>
+    <!-- MARQUEE / SCROLLING TEXT (top of page) -->
+    <div class="marquee-container" aria-hidden="false">
+      <div class="marquee">
+        <!-- Content wrapped in its own DIV for clean width calculation -->
+        <div class="marquee-content">
+          <span
+            >Creative Brand Positioning • Smart Execution • Growth • Branding •
+            Content • Websites •</span
+          >
+        </div>
+        <!-- Duplicated content wrapped in its own DIV -->
+        <div class="marquee-content">
+          <span
+            >Creative Brand Positioning • Smart Execution • Growth • Branding •
+            Content • Websites •</span
+          >
+        </div>
+        <!-- Duplicated a third time to ensure the scroll across the viewport has coverage -->
+        <div class="marquee-content">
+          <span
+            >Creative Brand Positioning • Smart Execution • Growth • Branding •
+            Content • Websites •</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- HEADER / NAV -->
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a class="logo" href="/">StormBrain</a>
+
+        <nav class="site-nav" role="navigation" aria-label="Main navigation">
+          <a href="#services">Services</a>
+          <a href="#portfolio">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <h1 class="hero-title">
+            Creative Brand Positioning.<br /><span class="accent"
+              >Smart execution for growth.</span
+            >
+          </h1>
+          <p class="hero-sub">
+            We build brands with depth, clarity and measurable impact.
+          </p>
+          <div class="hero-cta">
+            <!--Call To Action-->
+            <a class="btn btn-primary" href="#contact">Start Your Project</a>
+            <a class="btn btn-ghost" href="#portfolio">See Our Work</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services" class="services">
+        <div class="container">
+          <h2 class="section-title">What we do</h2>
+          <div class="cards-grid">
+            <article class="card">
+              <h3>Brand Strategy</h3>
+              <p>
+                Positioning, voice, & visual systems that make brands distinct.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Digital Experience</h3>
+              <p>
+                Performance websites & product design focused on conversions.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Content & Campaigns</h3>
+              <p>High-impact creative to grow awareness and engagement.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO / GALLERY -->
+      <section id="portfolio" class="portfolio">
+        <div class="container">
+          <h2 class="section-title">Selected Work</h2>
+
+          <div class="portfolio-grid">
+            <!-- portfolio item template: image + overlay -->
+            <figure class="portfolio-item">
+              <img src="images/FAANG.PNG" alt="Project 1 — Branding" />
+              <figcaption class="overlay">
+                <h3>Project One</h3>
+                <p>Branding & identity system</p>
+              </figcaption>
+            </figure>
+
+            <figure class="portfolio-item">
+              <img src="images/FAANG.PNG" alt="Project 2 — Website" />
+              <figcaption class="overlay">
+                <h3>Project Two</h3>
+                <p>Web redesign and UX</p>
+              </figcaption>
+            </figure>
+
+            <figure class="portfolio-item">
+              <img src="images/FAANG.PNG" alt="Project 3 — Campaign" />
+              <figcaption class="overlay">
+                <h3>Project Three</h3>
+                <p>Campaign & content production</p>
+              </figcaption>
+            </figure>
+
+            <figure class="portfolio-item">
+              <img src="images/FAANG.PNG" alt="Project 4 — Product" />
+              <figcaption class="overlay">
+                <h3>Project Four</h3>
+                <p>Testing and Quality</p>
+              </figcaption>
+            </figure>
+
+            <figure clas s="portfolio-item">
+              <img src="images/FAANG.PNG" alt="Project 4 — Product" />
+              <figcaption class="overlay">
+                <h3>Project five</h3>
+                <p>Pre-launch and Marketing</p>
+              </figcaption>
+            </figure>
+
+            <figure class="portfolio-item">
+              <img src="images/FAANG.PNG" alt="Project 4 — Product" />
+              <figcaption class="overlay">
+                <h3>Project six</h3>
+                <p>Product design & launch</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="portfolios">
+        <!-- Fade Overlays -->
+        <div class="fade-overlay top"></div>
+        <div class="fade-overlay bottom"></div>
+
+        <div class="gallery">
+          <!-- Column 1 (Roll Up) -->
+          <div class="column-roll">
+            <figure>
+              <img
+                src="https://placehold.co/260x550/0000FF/FFFFFF?text=Project+1"
+                alt="Project 1"
+              />
+            </figure>
+            <figure>
+              <img
+                src="https://placehold.co/260x550/FF00FF/FFFFFF?text=Project+2"
+                alt="Project 2"
+              />
+            </figure>
+            <figure>
+              <img
+                src="https://placehold.co/260x550/00FFFF/000000?text=Project+3"
+                alt="Project 3"
+              />
+            </figure>
+
+            <!-- Duplicated Set for Seamless Loop -->
+            <figure>
+              <img
+                src="https://placehold.co/260x550/0000FF/FFFFFF?text=Project+1"
+                alt="Project 1"
+              />
+            </figure>
+            <figure>
+              <img
+                src="https://placehold.co/260x550/FF00FF/FFFFFF?text=Project+2"
+                alt="Project 2"
+              />
+            </figure>
+            <figure>
+              <img
+                src="https://placehold.co/260x550/00FFFF/000000?text=Project+3"
+                alt="Project 3"
+              />
+            </figure>
+          </div>
+
+          <!-- Column 2 (Roll Down: Uses 'reverse' animation) -->
+          <div class="column-roll">
+            <figure>
+              <img
+                src="https://placehold.co/260x550/00AA00/FFFFFF?text=Project+4"
+                alt="Project 4"
+              />
+            </figure>
+            <figure>
+              <img
+                src="https://placehold.co/260x550/AA0000/FFFFFF?text=Project+5"
+                alt="Project 5"
+              />
+            </figure>
+            <figure>
+              <img
+                src="https://placehold.co/260x550/0000AA/FFFFFF?text=Project+6"
+                alt="Project 6"
+              />
+            </figure>
+
+            <!-- Duplicated Set for Seamless Loop -->
+            <figure>
+              <img
+                src="https://placehold.co/260x550/00AA00/FFFFFF?text=Project+4"
+                alt="Project 4"
+              />
+            </figure>
+            <figure>
+              <img
+                src="https://placehold.co/260x550/AA0000/FFFFFF?text=Project+5"
+                alt="Project 5"
+              />
+            </figure>
+            <figure>
+              <img
+                src="https://placehold.co/260x550/0000AA/FFFFFF?text=Project+6"
+                alt="Project 6"
+              />
+            </figure>
+          </div>
+
+          <!-- Column 3 (Roll Up) -->
+          <div class="column-roll">
+            <figure>
+              <img
+                src="https://placehold.co/260x550/FFAA00/000000?text=Project+7"
+                alt="Project 7"
+              />
+            </figure>
+            <figure>
+              <img
+                src="https://placehold.co/260x550/AAFF00/000000?text=Project+8"
+                alt="Project 8"
+              />
+            </figure>
+            <figure>
+              <img
+                src="https://placehold.co/260x550/00FFAA/000000?text=Project+9"
+                alt="Project 9"
+              />
+            </figure>
+
+            <!-- Duplicated Set for Seamless Loop -->
+            <figure>
+              <img
+                src="https://placehold.co/260x550/FFAA00/000000?text=Project+7"
+                alt="Project 7"
+              />
+            </figure>
+            <figure>
+              <img
+                src="https://placehold.co/260x550/AAFF00/000000?text=Project+8"
+                alt="Project 8"
+              />
+            </figure>
+            <figure>
+              <img
+                src="https://placehold.co/260x550/00FFAA/000000?text=Project+9"
+                alt="Project 9"
+              />
+            </figure>
+          </div>
+
+          <!-- Column 4 (Roll Down: Uses 'reverse' animation) -->
+          <div class="column-roll">
+            <figure>
+              <img
+                src="https://placehold.co/260x550/FF0000/FFFFFF?text=Project+10"
+                alt="Project 10"
+              />
+            </figure>
+            <figure>
+              <img
+                src="https://placehold.co/260x550/0000FF/FFFFFF?text=Project+11"
+                alt="Project 11"
+              />
+            </figure>
+            <figure>
+              <img
+                src="https://placehold.co/260x550/FF00FF/FFFFFF?text=Project+12"
+                alt="Project 12"
+              />
+            </figure>
+
+            <!-- Duplicated Set for Seamless Loop -->
+            <figure>
+              <img
+                src="https://placehold.co/260x550/FF0000/FFFFFF?text=Project+10"
+                alt="Project 10"
+              />
+            </figure>
+            <figure>
+              <img
+                src="https://placehold.co/260x550/0000FF/FFFFFF?text=Project+11"
+                alt="Project 11"
+              />
+            </figure>
+            <figure>
+              <img
+                src="https://placehold.co/260x550/FF00FF/FFFFFF?text=Project+12"
+                alt="Project 12"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <p>© <span id="year"></span> Storm-style Demo. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Minimal script for year and accessible behavior (no hover dependency) -->
+    <script>
+      // insert current year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

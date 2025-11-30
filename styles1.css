@@ -1,0 +1,452 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100vw;                      /*That 100% refers to its parent’s height — which is <html>. But if <html>doesn’t have an explicit height,
+        the browser doesn’t know what “100%” means.*/
+}
+
+body {
+    font-family: Inter, "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial;
+    color: #111;
+    background: #e7dfd5;
+    -webkit-font-smoothing: antialiased;   /*no need*//*text rendering properties for different OS*/
+    -moz-osx-font-smoothing: grayscale;         /*font rendering effect specifically for mozilla browser*/
+    line-height: 1.45;
+}
+
+.marquee-container {
+    background-color: #faf1e4;
+    color: #111;
+    overflow: hidden;
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.25); */
+}
+
+.marquee {
+    display: flex;
+    gap: 2 rem;
+    align-items: center;
+    white-space: nowrap;
+    animation: marquee 18s linear infinite; /* animation moves the whole inline group left continuously*/
+    will-change: transform;
+    padding: 10px 0;
+}
+
+.marquee span {
+    padding-right: 4rem;
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.25);
+}
+
+.marquee-container:hover .marquee {
+    animation-play-state: paused !important; 
+    cursor: pointer;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+    /* duplicate content makes the loop seamless */
+}
+
+/* simple responsive container used throughout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    background: #d4c8b8;
+    backdrop-filter: blur(6px);
+    z-index: 10;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.06); */
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+}
+
+.logo {
+    text-decoration: none;
+    font-weight: 700;
+    color: #111;
+    font-size: 1.05rem;
+    /* em “element” The font-size of the current element’s parent */
+    /* rem “root element” The font-size of the root (html) element */
+}
+
+.site-nav a {
+    margin-left: 26px;
+    text-decoration: none;
+    display: inline-block;  /*to create room for the children elements to translate*/
+    color: #333;
+    font-weight: 400;
+    font-size: .95rem;
+    transition: color .18s ease, transform .18s ease;
+}
+
+.site-nav a:hover, .site-nav a:focus {
+    color: #000;
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.hero{
+    background: linear-gradient(180deg, #e7dfd5 0%, #101217 100%);         /* direction, color1 position1, color2 position2,
+    /* background: url(images/for\ bbc\ cartoon.PNG) no-repeat center/cover, linear-gradient(180deg, #e7dfd5 0%, #101217 100%);  */
+    padding: 110px 0 90px;
+    text-align: center;
+}
+
+.hero-inner {
+    max-width: 920px;
+    margin: auto;
+}
+
+.hero-title {
+    font-size: clamp(1.8rem, 4vw, 3.2rem);          /*clamp two font value, scale @ 1% viewport size, never lower than 1.8rem never higher than 3.3rem*/
+    line-height: 1.05;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+}   
+
+.hero .accent {
+    background-image: linear-gradient(180deg, #64ffff, #dd48c9); /*ac07a1*/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-sub {
+    color: #e7dfd5; /*64d2ff*/
+    margin-bottom: 28px;
+    font-size: 1.05rem;
+}
+
+.hero-cta .btn {
+    display: inline-block;
+    margin: 0 8px;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.btn-primary{
+    background: #e7dfd5;
+    color: #012;
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.253);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.btn-ghost:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.services {
+    padding: 72px 0;
+    background: #d4c8b8;
+    color: #111;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 28px;
+    font-weight: 700;
+    color: #111;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    /* Repeat, It repeats a pattern of column sizes automatically, Autofit, Tells the grid to create as many columns as can fit in the container width. minmax Each column must be at least 240px wide,
+        but can grow up to 1 fraction of the available space (1fr). */
+    gap: 20px;
+    align-items: stretch;
+}
+
+.card {
+    padding: 28px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #fbfbfb, #f6f6f6);
+    box-shadow: 0 6px 18px rgba(15, 15, 15, 0.04);
+    transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+.card p {
+    color: #555;
+    font-size: .98rem;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(10, 10, 10, 0.06);
+}
+
+.portfolio {
+    padding: 80px 0;
+    background: #e7dfd5;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+}
+
+.portfolio-item {
+    position: relative;         /*this element can now act as a reference point for absolutely positioned elements inside it*/
+    overflow: hidden;           /*Keeps content neatly inside rounded corners or boundaries*/
+    border-radius: 12px;
+    background: #000;
+    min-height: 200px;
+    display: block;         /*Occupy the entire width of its parent container (by default)*/
+}
+
+.portfolio-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* start as grayscale and slightly scaled down for nicer zoom on hover */
+    filter: grayscale(100%) contrast(0.95) saturate(0.85);
+    transform: scale(1);
+    transition: filter .9s cubic-bezier(.2, .9, .2, 1), transform .9s cubic-bezier(.2, .9, .2, 1);
+    will-change: filter, transform;
+}
+
+/* overlay sits above the image; initially transparent */
+.overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 22px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.5) 100%);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.overlay h3 {
+    margin-bottom: 6px;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.overlay p {
+    font-size: .95rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.portfolio-item:hover img, .portfolio-item:focus-within .overlay {
+    filter: grayscale(0%) contrast(1) saturate(1.05);
+    transform: scale(1.05);
+}
+
+.portfolio-item:hover .overlay, .portfolio-item:focus-within .overlay{
+    opacity: 1;
+}
+
+.portfolio-item {
+    outline: none;
+}
+
+.portfolio-item:focus-visible {
+    box-shadow: 0 0 0 3px rgba(100, 210, 255, 0.15);
+}
+
+/* second Gallery */
+.portfolios {
+position: relative;
+padding: 100px 0;
+overflow: hidden;
+/* CRITICAL: Clips the content outside the visible area */
+height: 200vh;
+/* Set to be slightly taller than the viewport */
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 10;
+}
+
+/* ---------- Fade overlays (top & bottom) ---------- */
+.fade-overlay {
+position: absolute;
+/* to control the z-index and allow the overlays to stack on top of the scrolling images. */
+left: 0;
+width: 100%;
+height: 180px;
+pointer-events: none;
+/* Allows clicks to pass through to the element underneath */
+z-index: 100;
+}
+
+.fade-overlay.top {
+top: 0;
+/* Fades from the section background color to transparent */
+background: linear-gradient(to bottom, #e7dfd5 0%, transparent 100%);
+}
+
+.fade-overlay.bottom {
+bottom: 0;
+/* Fades from the section background color to transparent from the bottom */
+background: linear-gradient(to top, #e7dfd5 0%, transparent 100%);
+}
+
+.gallery {
+display: flex;
+gap: 50px;
+width: 90%;
+max-width: 1400px;
+margin: 0 auto;
+pointer-events: none;
+}
+
+/* The Animated Columns */
+.column-roll {
+display: flex;
+flex-direction: column;
+gap: 50px;
+/* This is crucial: Pull the content up by 50% of its own height 
+so the second set is immediately visible at the top edge. 
+The animation then scrolls the second set up until the first set appears. */
+margin-top: -50%;
+animation: rollUp 120s linear infinite;
+}
+
+/* Counter-Motion for Even Columns */
+.column-roll:nth-child(even) {
+/* Use the same keyframes but reverse the direction */
+animation: rollUp 60s linear infinite reverse;
+}
+
+/* Individual Image Cards */
+.gallery figure {
+margin: 0;
+padding: 15px;
+position: relative;
+overflow: hidden;
+/* If you were to add padding, borders, or any transformation that accidentally made the inner content slightly larger than the <figure> container, overflow: hidden;
+    prevents the browser from showing unwanted scrollbars (which is the default behavior for overflow: auto; ). Secondly the rotation effect my spread out of the box.*/
+border-radius: 30px;
+border: 1px solid rgba(239, 65, 245, 0.95);
+pointer-events: auto;
+
+/* Subtler rotation */
+transform: rotate(4deg);
+transition: transform 0.45s ease;
+}
+
+.gallery figure:hover {
+    /* Counter the initial rotation */
+    transform: rotate(0deg);
+}
+
+.column-roll img {
+width: 260px;
+height: 550px;
+border-radius: 30px;
+object-fit: cover;
+filter: grayscale(100%) brightness(85%);
+transition: filter 0.45s ease, transform 0.45s ease;
+}
+
+/* hover restores color and slightly zooms/straightens */
+.gallery figure:hover img {
+filter: grayscale(0%) brightness(100%);
+/* animation-play-state: paused; this still works but discouraged because the animation-play-state property is one of the few properties that is inherited by descendants.better to place the animation on the parent elemment*/
+}
+
+.column-roll:has(figure:hover) {
+    animation-play-state: paused;
+}
+
+/* ---------- Keyframes: Vertical Seamless Loop FIX ---------- */
+/* scroll upward forever */
+@keyframes rollUp {
+0% {
+/* Start at the top of the second set (due to margin-top: -50%) */
+transform: translateY(0);
+}
+
+100% {
+/* FIX 1: Only move up by 50% of the total height. 
+This moves exactly one duplicated set's height and creates a seamless loop. */
+transform: translateY(-50%);
+}
+}
+
+.site-footer{
+    padding: 40px 0;
+    background-color: #a08b6f;
+    color: #f6f6f6;
+    text-align: center;
+    font-size: .95rem;
+}
+
+@media (max-width: 900px) {
+    .hero{
+        padding: 72px 0 60px;
+    }
+
+    .hero-sub {
+        font-size: .98rem;
+    }
+
+    .site-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 520px) {
+    .marquee span {
+        font-size: .88rem;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
